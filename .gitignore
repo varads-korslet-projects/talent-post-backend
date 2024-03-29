@@ -1,4 +1,6 @@
 __pycache__
+db.sqlite3
 migrations/
 venv/
-db.sqlite3
+media/
+static/
