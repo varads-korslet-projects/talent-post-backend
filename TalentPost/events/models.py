@@ -8,20 +8,21 @@ class Event(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    cover_photo = models.ImageField(upload_to='event_covers/')
-    thumbnail = models.ImageField(upload_to='event_thumbnails/')
+    cover_photo = models.ImageField(upload_to='Images/event_covers/')
+    thumbnail = models.ImageField(upload_to='Images/event_thumbnails/')
+    event_video = models.FileField(upload_to='Videos/event_videos', null=True, blank=True)
 
 class Organizer(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     organizer_name = models.CharField(max_length=255)
     organizer_info = models.TextField()
-    organizer_display_image = models.ImageField(upload_to='organizer_images/')
+    organizer_display_image = models.ImageField(upload_to='Images/organizer_images/')
 
 class Sponsor(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     sponsor_name = models.CharField(max_length=255)
     sponsor_description = models.TextField()
-    sponsor_display_image = models.ImageField(upload_to='sponsor_images/')
+    sponsor_display_image = models.ImageField(upload_to='Images/sponsor_images/')
 
 class OrganizingTeam(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
