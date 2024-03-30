@@ -13,14 +13,7 @@ Create required directories
 ```
 cd TalentPost
 mkdir media
-mkdir media/Audio
-mkdir media/Files
-mkdir media/Images
-mkdir media/Video
 mkdir static
-mkdir static/assets
-mkdir statis/css
-mkdit static/js
 ```
 
 Create the database
